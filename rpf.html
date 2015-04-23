@@ -5,11 +5,13 @@
 </head>
 <script>
 
-var userChoice = prompt("Do you choose rock, paper or fireball?");
-while (userChoice !=="rock" && userChoice !=="paper" && userChoice !=="fireball"){
- confirm(userChoice + " isn't rock, paper or fireball. How about you try again?");
- userChoice = prompt("Do you choose rock, paper or fireball?");
+var userChoice = prompt("Do you choose rock, paper, fireball or NUKE?");
+while (userChoice !=="rock" && userChoice !=="paper" && userChoice !=="fireball" && userChoice !=="NUKE" && userChoice !=="tegan and sara"){
+ confirm(userChoice + " isn't rock, paper, fireball or NUKE. How about you try again dumb-dumb?");
+ userChoice = prompt("Do you choose rock, paper, fireball, or NUKE?");
+
 }
+
 var computerChoice = Math.random();
 if (computerChoice < 0.34) {
     computerChoice = "rock";
@@ -23,36 +25,43 @@ if (computerChoice < 0.34) {
 console.log("You Chose:  "+userChoice);
 console.log("The Computer Chose:  "+computerChoice);
 var compare = function (choice1,choice2){
+  if (choice1 === "NUKE"){
+  return("CHEATER! Now you're really not going to win");
+  }
+  if (choice1 === "tegan and sara"){
+  return("Jason sucks");
+  }
     if (choice1 === choice2){
-        document.write("The result is a tie!");
+        return("The result is a tie!");
     }
 
 if (choice1 === "rock"){
      if  (choice2 === "paper"){
-        document.write("Paper wins");
+        return("Paper wins");
     }
      if (choice2 === "fireball") {
-        document.write("Rock wins";)
+        return("Rock wins");
     }
 }
 if (choice1 === "paper"){
      if (choice2 === "fireball"){
-        document.write("fireball wi)ns! (duh it's a fireball)";
+        return("fireball wins! (duh it's a fireball");
     }
      if (choice2 === "rock"){
-        document.write("Paper wins!)";
+        return("Paper wins!");
         }
 }
 if (choice1 === "fireball"){
      if (choice2 === "rock"){
-        document.write("Rock wins!");
+        return("Rock wins!");
     }
      if (choice2 === "paper"){
-    document.write("fireball wi)ns!";
+    return("fireball wins!");
     }
 }
 };
-compare(userChoice,computerChoice);
+var result = compare(userChoice,computerChoice);
+console.log(result);
 
 </script>
 
